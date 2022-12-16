@@ -1,5 +1,6 @@
 const usersData = require("../models/users");
 const bcrypt = require("bcrypt");
+var bcrypt = require('bcryptjs');
 require("dotenv").config();
 const Joi = require("joi");
 const jwt = require("jsonwebtoken");
@@ -30,13 +31,13 @@ exports.addUser = async (req, res, next) => {
   }
 
   try {
-    const salt = await bcrypt.genSalt();
+    // const salt = await bcrypt.genSalt();
+    var salt = bcrypt.genSaltSync(10);
     console.log("salt", salt);
 
     console.log("Salt", salt);
     console.log("Password", req.body.password);
-
-    req.body.password = await bcrypt.hash(req.body.password, salt);
+    req.body.password = await bcrypt.hashSync(req.body.password, salt);
 
     console.log(req.body.password);
     const users = new usersData({
@@ -59,7 +60,7 @@ exports.validateUser = async(req,res,next)=>{
     email:Joi.string().email().required(),
     password:Joi.string().required()
   })
-  var {error} =await schema.validate(req.body);
+  var {error} = await schema.validate(req.body);
   if(error){
     return res.status(400).send({msg:error.details[0].message})
   }
@@ -70,7 +71,7 @@ exports.validateUser = async(req,res,next)=>{
  }
  console.log("reqpassowrd",req.body.password);
  console.log("userpassword",user.password)
- const isValid = await bcrypt.compare(req.body.password,user.password);
+ const isValid = await bcrypt.compareSync(req.body.password,user.password);
  console.log(isValid);
  if(!isValid){
   console.log("im hete");
