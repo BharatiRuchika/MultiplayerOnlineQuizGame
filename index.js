@@ -54,7 +54,7 @@ var app = express();
 
 app.use(function (req, res, next) {
   console.log("environment",process.env.NODE_ENV)
-  res.setHeader('Access-Control-Allow-Origin', "http://localhost:3000","https://vercel.com");
+  res.setHeader('Access-Control-Allow-Origin', "http://localhost:3000","https://vercel.com","https://multiplayer-online-quiz-game-bharatiruchika.vercel.app/");
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type Accept');
   res.setHeader('Access-Control-Allow-Credentials', true);
@@ -74,7 +74,7 @@ const httpServer = createServer(app);
 
 const io = new Server(httpServer,{
   cors: {
-    origin: 'https://vercel.com',
+    origin: true,
     credentials:true,      
     optionSuccessStatus:200
 
