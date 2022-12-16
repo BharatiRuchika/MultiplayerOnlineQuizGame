@@ -34,6 +34,7 @@
     "passport-auth0": "^1.4.1",
     "session": "^0.1.0",
     "socket.io": "latest",
+    "uglify-js": "^3.17.4",
     "vercel": "^28.9.0"
   }
 }
