@@ -1,0 +1,164 @@
+.check-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+ .path{
+    width:40%;
+    stroke: aliceblue;
+    stroke-width: 20%;
+    stroke-dasharray: 2500;
+    opacity: 10;
+  }
+  .check{
+    animation: checkmark 800ms cubic-bezier(0,0.23,1,.1);
+    animation-timing-function: ease-in-out;
+  }
+  .xmark{
+    animation: xmad 500ms cubic-bezier(0,0.23,1,.1);
+    animation-timing-function: ease-in-out;
+  }
+  
+  
+  @keyframes xmad {
+    0% {
+        stroke-dashoffset: 2500;
+    }
+    80%{
+      transform: scale(1)
+    }
+    90% {
+        opacity: 10;
+        stroke-dashoffset: 0;
+    }
+    100% { transform: translate(20px, -2px)}
+  }
+  
+  
+  @keyframes checkmark {
+    0% {
+        stroke-dashoffset: 2500;
+    }
+    90%{
+      transform: scale(1.09)
+    }
+    100% {
+        opacity: 10;
+        stroke-dashoffset: 0;
+    }
+  }
+  
+
+
+  /* STARS---------------------------------- */
+  .back{
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* background-color: rgb(130, 68, 211); */
+    overflow: hidden;
+    position: absolute;
+  }
+  
+  .star{
+    width:20%;
+    opacity: .1;
+    justify-self: center;
+    align-self: center;
+  }
+  
+  .star1{
+    width: 100%;
+    opacity: .1;
+    justify-self: center;
+    align-self: center;
+  }
+  
+  .star2{
+    width:30%;
+    opacity: .2;
+    justify-self: end;
+    padding: 20px;
+  }
+  
+  .star3{
+    width: 70%;
+    opacity: .2;
+  }
+  
+  .botm-right{
+    grid-area: br;
+    padding: 0px 30px;
+  }
+  
+  .topl{
+   grid-area: topl;
+   padding: 20px;
+  }
+  
+  .middle{
+    grid-area : mm;
+    opacity: .09;
+  }
+  
+  .container{
+    display: grid;
+    grid-gap: .5em;
+    grid-template-areas: 
+    'topl topm topr'
+    'ml mm mr'
+    'bl bm br'
+  }
+  
+  .grid1{
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    height: 100vh;
+  }
+  
+  /* STARS---------------------------------- */
+  
+
+
+
+
+  .zoom{
+    position: absolute;
+    left: -500px;
+    animation: zooms 3000ms cubic-bezier(0,0.23,1,.1);
+    animation-timing-function: ease-in-out;
+  }
+  
+  .jeremy{
+    position: absolute;
+    left: -700px;
+    animation: jeremy 5500ms cubic-bezier(0,0.23,1,.1);
+    animation-timing-function: ease-in-out;
+  }
+  
+  @keyframes zooms {
+    0% {
+        transform: translate(3000px, -100px)
+    }
+    100% {
+      transform: scale(1.09)
+    }
+  }
+  
+  @keyframes jeremy {
+    0% {
+    }
+    90% {
+        transform: translateX(700px)
+    }
+    100% {
+      transform: scale(1.09)
+    }
+  }
+  
+  
+  
+  
+  
+  

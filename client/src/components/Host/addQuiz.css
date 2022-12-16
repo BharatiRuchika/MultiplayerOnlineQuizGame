@@ -1,0 +1,17 @@
+.answer-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: .5em;
+    padding: 1em;
+    grid-auto-rows: minmax(18em, auto);
+}
+.q-blank{
+    box-shadow:  0 10px 6px 1px rgba(106, 36, 16, 0.62);
+    border-radius: 4px;
+}
+.q{
+    height: 400px;
+     box-sizing: border-box;
+     text-align: center;
+     padding-top: 24px;
+ }
