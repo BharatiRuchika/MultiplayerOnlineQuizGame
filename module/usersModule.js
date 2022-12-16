@@ -1,5 +1,5 @@
 const usersData = require("../models/users");
-const bcrypt = require("bcrypt");
+// const bcrypt = require("bcrypt");
 var bcrypt = require('bcryptjs');
 require("dotenv").config();
 const Joi = require("joi");
