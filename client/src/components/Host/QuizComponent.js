@@ -91,7 +91,8 @@ function QuizComponent(props){
         //     props.history.push("/users/login");
         // }else{
             console.log("token",token);
-       var res =  await axios.delete(`https://multiplayer-online-quiz-game.vercel.app/deleteQuiz/${id}`,{
+            
+       var res =  await axios.delete(`https://multiplayer-online-quiz-game.vercel.app/quiz/deleteQuiz/${id}`,{
            headers:{
                'auth-token':token
            }
