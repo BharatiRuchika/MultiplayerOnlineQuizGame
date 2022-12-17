@@ -13,7 +13,7 @@ import Home from './components/Home/Home';
 import SignUp from "./components/Home/Signup";
 import Login from "./components/Home/Login";
 function PrivateRoute({ path, component: Comp }) {
-  console.log(localStorage.getItem("token"));
+  // console.log(localStorage.getItem("token"));
   // console.log(isLoggedIn);
   return (<Route exact path={path} render={(props) => {
     const isLoggedIn = localStorage.getItem("token");

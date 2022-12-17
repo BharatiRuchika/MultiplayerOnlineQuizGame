@@ -77,9 +77,12 @@ const io = new Server(httpServer,{
   cors: {
     origin: "*",
     methods: "GET,PUT,POST,DELETE",
+    transports: ['websocket', 'polling'],
     credentials:true,      
     optionSuccessStatus:200
-  }}
+  },
+  allowEIO3: true
+}
   );
 const users = {};
 var clients = {};
