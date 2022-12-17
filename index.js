@@ -74,7 +74,7 @@ const httpServer = createServer(app);
 
 const io = new Server(httpServer,{
   cors: {
-    origin: true,
+    origin: "https://multiplayer-online-quiz-game.vercel.app/",
     credentials:true,      
     optionSuccessStatus:200
 
