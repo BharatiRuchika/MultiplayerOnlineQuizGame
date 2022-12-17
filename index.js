@@ -316,10 +316,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.set('view engine', 'pug');
 if(process.env.NODE_ENV=="production"){
   const path = require("path");
-  app.get("/",(req,res)=>{
+  app.get("/",(req,res,err)=>{
     console.log("im here");
     app.use(express.static(path.resolve(__dirname,'client','build','index.html')))
-    res.sendFile(path.resolve(__dirname,'client','build','index.html'));
+    res.sendFile(path.resolve(__dirname,'client','build','index.html'),(err,data)=>{
+      if(err){
+        console.log("err",err);
+      }
+    });
   })
 }
 // if(process.env.NODE_ENV==="production"){
