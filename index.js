@@ -248,16 +248,7 @@ socket.on("disconnect",function(){
  
 })
 
-// app.use(express.static(`${__dirname}/../build`))
-// app.use(bodyParser.json())
-
-// massive(CONNECTION_STRING).then(db =>{app.set('db',db)} )
-
-// app.use(session({
-//   secret:SESSION_SECRET,
-//   resave: false,
-//   saveUninitialized: true
-// }))
+/
 
 ///////auth0
 // app.use(passport.initialize());
@@ -319,6 +310,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use((err,req,res,next)=>{
 //   next();
 // })
+if(process.env.NODE_ENV==="production"){
+  // app.use(express.static(path.join(__dirname,"Frontend_Kahoot-ma/build")));
+  const path = require("path");
+  app.use(express.static(path.join(__dirname, 'client/build')))
+  app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build'))
+  // res.send("im run");
+})
+}
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use((req,res,next)=>{
