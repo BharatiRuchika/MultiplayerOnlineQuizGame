@@ -299,8 +299,8 @@ socket.on("disconnect",function(){
 
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'pug');
+// app.set('views', path.join(__dirname, 'views'));
+// app.set('view engine', 'pug');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -310,6 +310,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use((err,req,res,next)=>{
 //   next();
 // })
+
+app.set('views', path.join(__dirname, 'views'));
+// app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 if(process.env.NODE_ENV=="production"){
   const path = require("path");
   app.get("/",(req,res)=>{
