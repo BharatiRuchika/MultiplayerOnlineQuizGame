@@ -75,14 +75,11 @@ const httpServer = createServer(app);
 const io = new Server(httpServer,{
   cors: {
     origin: "*",
+    methods: "GET,PUT,POST,DELETE",
     credentials:true,      
     optionSuccessStatus:200
-
   }}
   );
-
-
-
 const users = {};
 var clients = {};
 var hosts={};
