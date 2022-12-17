@@ -328,9 +328,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 console.log("dirname",express.static(path.join(__dirname,"client/build")));
 if(process.env.NODE_ENV==="production"){
-  app.use(express.static(path.join(__dirname,"client/build")));
-  const path = require("path");
   
+  const path = require("path");
+  app.use(express.static(path.join(__dirname,"client/build")));
   app.get('/', (req, res) => {
   // res.sendFile(`./index.html`);
   // res.sendFile(__dirname + '/public/main.html');
