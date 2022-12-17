@@ -52,6 +52,7 @@ var app = express();
 //   next();
 // });
 
+console.log("clientURL",config.clientURL)
 app.use(function (req, res, next) {
   console.log("environment",process.env.NODE_ENV)
   res.setHeader('Access-Control-Allow-Origin', "*");
