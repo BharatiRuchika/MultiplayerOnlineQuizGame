@@ -12,7 +12,7 @@ var connectionOptions = {
 
 // 
 // let socket = io.connect('https://my-kahoot-backend.herokuapp.com/',connectionOptions);
-var socket = io('https://multiplayer-online-quiz-game.vercel.app/', { secure: true, reconnection: true, rejectUnauthorized: false });
+var socket = io('https://multiplayer-online-quiz-game.vercel.app/', { transports: ['websocket', 'polling', 'flashsocket'] });
 // let socket = io("https://multiplayer-online-quiz-game.vercel.app/");
 // const socket = io.connect("https://my-kahoot-backend.herokuapp.com/", { secure: true, reconnection: true, rejectUnauthorized: false });
 console.log("socket",socket);
