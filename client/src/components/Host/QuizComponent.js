@@ -90,6 +90,7 @@ function QuizComponent(props){
         // if(decoded.exp*1000<=Date.now()){
         //     props.history.push("/users/login");
         // }else{
+            console.log("token",token);
        var res =  await axios.delete(`https://multiplayer-online-quiz-game.vercel.app/deleteQuiz/${id}`,{
            headers:{
                'auth-token':token
