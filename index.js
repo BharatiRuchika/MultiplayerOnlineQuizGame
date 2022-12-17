@@ -330,8 +330,9 @@ if(process.env.NODE_ENV==="production"){
   const path = require("path");
   
   app.get('/', (req, res) => {
-  res.sendFile(`./index.html`);
+  // res.sendFile(`./index.html`);
   // res.sendFile(__dirname + '/public/main.html');
+  res.sendFile('index.html', {root: 'public'});
   // res.send("im run");
 })
 }
