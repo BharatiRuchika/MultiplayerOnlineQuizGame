@@ -54,7 +54,7 @@ var app = express();
 
 app.use(function (req, res, next) {
   console.log("environment",process.env.NODE_ENV)
-  res.setHeader('Access-Control-Allow-Origin', "http://localhost:3000","https://vercel.com","https://multiplayer-online-quiz-game-bharatiruchika.vercel.app/");
+  res.setHeader('Access-Control-Allow-Origin', "http://localhost:3000","https://vercel.com","https://multiplayer-online-quiz-game-lusws27b8-bharatiruchika.vercel.app/");
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type Accept');
   res.setHeader('Access-Control-Allow-Credentials', true);
@@ -317,6 +317,7 @@ app.set('view engine', 'html');
 if(process.env.NODE_ENV=="production"){
   const path = require("path");
   app.get("/",(req,res)=>{
+    console.log("im here");
     app.use(express.static(path.resolve(__dirname,'client','build','index.html')))
     res.sendFile(path.resolve(__dirname,'client','build','index.html'));
   })
