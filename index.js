@@ -325,15 +325,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 //   })
 // }
 // app.use(express.static(path.join(__dirname, 'client/build')))
+
+console.log("dirname",express.static(path.join(__dirname,"client/build")));
 if(process.env.NODE_ENV==="production"){
-  // app.use(express.static(path.join(__dirname,"Frontend_Kahoot-ma/build")));
+  app.use(express.static(path.join(__dirname,"client/build")));
   const path = require("path");
   
   app.get('/', (req, res) => {
   // res.sendFile(`./index.html`);
   // res.sendFile(__dirname + '/public/main.html');
-  res.sendFile('index.html', {root: 'public'});
+  // res.sendFile('index.html', {root: 'public'});
   // res.send("im run");
+  
+    // res.sendFile(path.join(__dirname, 'build', 'index.html'));
+
+  res.sendFile(path.join(__dirname,'client','build','index.html'))
 })
 }
 // app.use('/', indexRouter);
