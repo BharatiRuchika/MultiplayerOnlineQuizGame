@@ -17,7 +17,7 @@ function Questions(){
         if(decoded.exp*1000<=Date.now()){
             this.props.history.push("/users/login");
         }else{
-        var response = await axios.get(`http://localhost:3001/quizquestions/getQuestions/${id}`,{
+        var response = await axios.get(`https://multiplayer-online-quiz-game.vercel.app/quizquestions/getQuestions/${id}`,{
           headers:{
             'auth-token':token
           }

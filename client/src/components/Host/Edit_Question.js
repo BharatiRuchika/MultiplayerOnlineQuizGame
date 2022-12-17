@@ -27,7 +27,7 @@ export default class Edit_Question extends Component {
         }
     async getQuestion() {
         const token = localStorage.getItem("token");
-        var response = await axios.get(`http://localhost:3001/quizquestions/getQuestion/${this.props.match.params.id}`, {
+        var response = await axios.get(`https://multiplayer-online-quiz-game.vercel.app/quizquestions/getQuestion/${this.props.match.params.id}`, {
             headers: {
                 'auth-token': token
             }
@@ -58,7 +58,7 @@ export default class Edit_Question extends Component {
             // if (decoded.exp * 1000 <= Date.now()) {
             //     this.props.history.push("/users/login");
             // } else {
-                var response = await axios.put(`http://localhost:3001/quizquestions/updateQuestion/${quizId}/${id}`, { question, answer1, answer2, answer3, answer4, correctAnswer }, {
+                var response = await axios.put(`https://multiplayer-online-quiz-game.vercel.app/quizquestions/updateQuestion/${quizId}/${id}`, { question, answer1, answer2, answer3, answer4, correctAnswer }, {
                     headers: {
                         'auth-token': token
                     }
