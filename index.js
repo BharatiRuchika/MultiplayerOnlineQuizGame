@@ -331,7 +331,7 @@ if(process.env.NODE_ENV=="production"){
 //   // res.send("im run");
 // })
 // }
-app.use('/', indexRouter);
+// app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use((req,res,next)=>{
   console.log("im here");
