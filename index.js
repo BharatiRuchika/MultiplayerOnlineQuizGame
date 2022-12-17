@@ -312,27 +312,27 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.set('views', path.join(__dirname, 'views'));
 // app.engine('html', require('ejs').renderFile);
 // app.set('view engine', 'pug');
-if(process.env.NODE_ENV=="production"){
-  const path = require("path");
-  app.get("/",(req,res,err)=>{
-    console.log("im here");
-    app.use(express.static(path.resolve(__dirname,'client','build','index.html')))
-    res.sendFile(path.resolve(__dirname,'client','build','index.html'),(err,data)=>{
-      if(err){
-        console.log("err",err);
-      }
-    });
-  })
-}
-// if(process.env.NODE_ENV==="production"){
-//   // app.use(express.static(path.join(__dirname,"Frontend_Kahoot-ma/build")));
+// if(process.env.NODE_ENV=="production"){
 //   const path = require("path");
-//   app.use(express.static(path.join(__dirname, 'client/build')))
-//   app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'client/build'))
-//   // res.send("im run");
-// })
+//   app.get("/",(req,res,err)=>{
+//     console.log("im here");
+//     app.use(express.static(path.resolve(__dirname,'client','build','index.html')))
+//     res.sendFile(path.resolve(__dirname,'client','build','index.html'),(err,data)=>{
+//       if(err){
+//         console.log("err",err);
+//       }
+//     });
+//   })
 // }
+if(process.env.NODE_ENV==="production"){
+  // app.use(express.static(path.join(__dirname,"Frontend_Kahoot-ma/build")));
+  const path = require("path");
+  app.use(express.static(path.join(__dirname, 'client/build')))
+  app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build'))
+  // res.send("im run");
+})
+}
 // app.use('/', indexRouter);
 app.use('/users', usersRouter);
 // app.use((req,res,next)=>{
