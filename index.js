@@ -311,9 +311,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 //   next();
 // })
 
-app.set('views', path.join(__dirname, 'views'));
+// app.set('views', path.join(__dirname, 'views'));
 // app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
+// app.set('view engine', 'pug');
 if(process.env.NODE_ENV=="production"){
   const path = require("path");
   app.get("/",(req,res)=>{
