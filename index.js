@@ -344,24 +344,24 @@ if(process.env.NODE_ENV==="production"){
 }
 // app.use('/', indexRouter);
 app.use('/users', usersRouter);
-// app.use((req,res,next)=>{
-//   console.log("im here");
-//   const token = req.headers["auth-token"];
-//   console.log("token",token);
-//   if(token){
-//     console.log("im here also");
-//     try{
-//     req.user = jwt.verify(token,"GUvi!jdks");
-//     // console.log("users",user);
-//     next();
-//     }catch(err){
-//       res.sendStatus(401);
-//     }
-//   }else{
-//     res.sendStatus(401);
-//   }
+app.use((req,res,next)=>{
+  console.log("im here");
+  const token = req.headers["auth-token"];
+  console.log("token",token);
+  if(token){
+    console.log("im here also");
+    try{
+    req.user = jwt.verify(token,"GUvi!jdks");
+    // console.log("users",user);
+    next();
+    }catch(err){
+      res.sendStatus(401);
+    }
+  }else{
+    res.sendStatus(401);
+  }
   
-// })
+})
 app.use('/quiz', addQuizRouter);
 app.use('/quizquestions',quizQuestionsRouter);
 // catch 404 and forward to error handler
