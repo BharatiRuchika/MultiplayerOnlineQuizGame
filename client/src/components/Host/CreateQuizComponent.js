@@ -32,7 +32,7 @@ class New_Quiz extends Component {
         const token = localStorage.getItem("token");
         // var decoded = jwt.decode(token);
       
-        var response = await axios.post("https://secure-ravine-99917.herokuapp.com/quiz/addQuiz",{
+        var response = await axios.post("http://localhost:3001/quiz/addQuiz",{
             quizName:this.state.quiz_name,
             quizDescription:this.state.info
         })

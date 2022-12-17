@@ -17,7 +17,7 @@ function Questions(){
         if(decoded.exp*1000<=Date.now()){
             this.props.history.push("/users/login");
         }else{
-        var response = await axios.get(`https://secure-ravine-99917.herokuapp.com/quizquestions/getQuestions/${id}`,{
+        var response = await axios.get(`http://localhost:3001/quizquestions/getQuestions/${id}`,{
           headers:{
             'auth-token':token
           }

@@ -47,7 +47,7 @@ class Questions extends Component {
     async getQuestions() {
         const token = localStorage.getItem("token");
        console.log(`id is ${this.props.quizToEdit._id}`)
-       var response = await axios.get(`https://secure-ravine-99917.herokuapp.com/quizquestions/getQuestions/${this.props.quizToEdit._id}`,{
+       var response = await axios.get(`http://localhost:3001/quizquestions/getQuestions/${this.props.quizToEdit._id}`,{
            headers:{
                'auth-token':token
            }
@@ -65,7 +65,7 @@ class Questions extends Component {
         if(decoded.exp*1000<=Date.now()){
             this.props.history.push("/users/login");
         }else{
-            var response =  await axios.delete(`https://secure-ravine-99917.herokuapp.com/quizquestions/deleteQuestion/${id}`,{
+            var response =  await axios.delete(`http://localhost:3001/quizquestions/deleteQuestion/${id}`,{
            headers:{
                'auth-token':token
            }
@@ -98,7 +98,7 @@ class Questions extends Component {
             if(decoded.exp*1000<=Date.now()){
                 this.props.history.push("/users/login");
             }else{
-                await axios.put(`https://secure-ravine-99917.herokuapp.com/quiz/updateQuiz/${id}`, { quizName: newName, quizDescription: newInfo },{
+                await axios.put(`http://localhost:3001/quiz/updateQuiz/${id}`, { quizName: newName, quizDescription: newInfo },{
                     headers:{
                         'auth-token':token
                     }
@@ -116,7 +116,7 @@ class Questions extends Component {
         // if(decoded.exp*1000<=Date.now()){
         //     this.props.history.push("/users/login");
         // }else{
-        var response = await axios.get(`https://secure-ravine-99917.herokuapp.com/quiz/getQuiz/${this.props.quizToEdit._id}`,{
+        var response = await axios.get(`http://localhost:3001/quiz/getQuiz/${this.props.quizToEdit._id}`,{
             headers:{
                 'auth-token':token
             }

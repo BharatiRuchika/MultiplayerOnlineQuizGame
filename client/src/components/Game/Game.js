@@ -46,7 +46,7 @@ class Game extends Component {
       console.log("players",this.state.players);
       console.log("props",this.props);
     
-        var res = await axios.get(`https://secure-ravine-99917.herokuapp.com/quizquestions/getQuestions/${this.props.quiz._id}`,{
+        var res = await axios.get(`http://localhost:3001/quizquestions/getQuestions/${this.props.quiz._id}`,{
             headers:{
                 'auth-token':token
             }

@@ -43,7 +43,7 @@ function QuizComponent(props){
     const getQuizzes=async()=>{
         // console.log("user_id",userId);
         console.log("token",token);
-        var response = await axios.get(`https://secure-ravine-99917.herokuapp.com/quiz/getQuizzes`,{
+        var response = await axios.get(`http://localhost:3001/quiz/getQuizzes`,{
             headers:{
                 'auth-token':token
             }
@@ -60,7 +60,7 @@ function QuizComponent(props){
     //     history.push(`/createQuiz`);
     // }
     const setRedirect = async(e)=>{
-        var response = await axios.get(`https://secure-ravine-99917.herokuapp.com/quizquestions/getQuestions/${e._id}`,{
+        var response = await axios.get(`http://localhost:3001/quizquestions/getQuestions/${e._id}`,{
             headers:{
               'auth-token':token
             }
@@ -90,7 +90,7 @@ function QuizComponent(props){
         // if(decoded.exp*1000<=Date.now()){
         //     props.history.push("/users/login");
         // }else{
-       var res =  await axios.delete(`https://secure-ravine-99917.herokuapp.com/deleteQuiz/${id}`,{
+       var res =  await axios.delete(`http://localhost:3001/deleteQuiz/${id}`,{
            headers:{
                'auth-token':token
            }
